@@ -1,0 +1,1 @@
+{"version":3,"sources":["../src/module.js"],"names":["OrganisationsCtrl"],"mappings":";;;;;;;;AAASA,uB,uBAAAA,iB;;;2BACAA,iB","file":"module.js","sourcesContent":["import { OrganisationsCtrl } from './organisations_ctrl';\nexport { OrganisationsCtrl as PanelCtrl };\n//# sourceMappingURL=module.js.map"]}

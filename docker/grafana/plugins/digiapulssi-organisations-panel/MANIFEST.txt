@@ -1,0 +1,39 @@
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+{
+  "manifestVersion": "2.0.0",
+  "signatureType": "community",
+  "signedByOrg": "grafana",
+  "signedByOrgName": "Grafana Labs",
+  "plugin": "digiapulssi-organisations-panel",
+  "version": "1.3.1",
+  "time": 1622740887120,
+  "keyId": "7e4d0c6a708866e7",
+  "files": {
+    "module.ts": "de563f41514f3bc86f4e61227d44858afeffaa763fde21003e3cff31e7ffd6c3",
+    "module.html": "5c017193f046c363f10bdff614e2396029d1ea3d370484fa105d3e5971222232",
+    "module.js.map": "8d1a752d2df9448e35056f948009dde114e9f1ee2a5b403fd62f24162bc4fe1d",
+    "organisations_ctrl.js": "2f52c39fdd5c4d3f3b4e921af6e1a971782e3d2a14a7ba4490fe9fb4be34f35f",
+    "plugin.json": "33a92b5ae10edfd157114d5dd0da19d2738ed1fd564cfe1c1c95fd56ac21d1e3",
+    "organisations_ctrl.js.map": "d0b8ca8ec83ce3b52d70d90a616c51b098b40db49762dd59e1cba8d28d6e9e01",
+    "README.md": "7531e6a6fa7f7861017f5d28cdd8d1fb2009760aa899a6b26ad63732291f783c",
+    "module.js": "504a880d078e9dff50d10dc662d42b2055fda376fe97498bbf1b15595df71844",
+    "style.css": "f6c9aa7e2d7a18de376ae58e3dc1a65b6753a7bd4883385983b35ac75c67960f",
+    "organisations_ctrl.ts": "7233dc40b6de1b8df60a9756b4a34a28443bc6e724fa8907c9c327daf371d7a0",
+    "src/img/organisations-screenshot.png": "5285c85e81a4d3222a054020c35dd4f5b9cce5a3603bcc0f383fb3cfc0e43e49",
+    "src/img/organisations-screenshot-light.png": "35d6194cce425508f3271ec0f11519a773aac1f65da9de7d3edc36b04e35a7be",
+    "src/img/organisations-icon.svg": "e302cfd9436e1298f0ae0f7a7b5caac5cda17b9fafc9a1051b413deb22f16e65"
+  }
+}
+-----BEGIN PGP SIGNATURE-----
+Version: OpenPGP.js v4.10.1
+Comment: https://openpgpjs.org
+
+wqEEARMKAAYFAmC5D5cACgkQfk0ManCIZue7ZQIJAQopEjYiPG/5p0w7TBbW
+d8AWRldyPlRczXf2TZCL+jKvaMHZSvBCXwhLHWQGgR/gBGyfOTXeE1DiQX1j
+iL9u18C3AgjxYRsGSTjFe8hTahWr/b2l8FNSp7XUUxrhWx8G7fF2aa8fs3kO
+8wTtuKWvP/9fWadr1cynyDBAAbDYRHGqrdMLhQ==
+=oZd6
+-----END PGP SIGNATURE-----
