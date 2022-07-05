@@ -6,7 +6,7 @@ services:
   loki0:
     image: grafana/loki:2.4.0
     volumes:
-      - /Users/emagradze/CodeArea/grafana-loki-dockerized/loki_0:/etc/loki
+      - ./loki_0:/etc/loki
     ports:
       - "3100:3100"
     restart: unless-stopped
@@ -17,7 +17,7 @@ services:
     image: grafana/promtail:2.4.0
     volumes:
       - /var/log:/var/log
-      - /Users/emagradze/CodeArea/grafana-loki-dockerized/promtail_0:/etc/promtail
+      - ./promtail_0:/etc/promtail
     # ports:
     #   - "1514:1514" # this is only needed if you are going to send syslogs
     restart: unless-stopped
@@ -28,7 +28,7 @@ services:
   loki1:
     image: grafana/loki:2.4.0
     volumes:
-      - /Users/emagradze/CodeArea/grafana-loki-dockerized/loki_1:/etc/loki
+      - ./loki_1:/etc/loki
     ports:
       - "3101:3101"
     restart: unless-stopped
@@ -39,7 +39,7 @@ services:
     image: grafana/promtail:2.4.0
     volumes:
       - /var/log:/var/log
-      - /Users/emagradze/CodeArea/grafana-loki-dockerized/promtail_1:/etc/promtail
+      - ./promtail_1:/etc/promtail
     # ports:
     #   - "1514:1514" # this is only needed if you are going to send syslogs
     restart: unless-stopped
@@ -50,7 +50,7 @@ services:
   loki2:
     image: grafana/loki:2.4.0
     volumes:
-      - /Users/emagradze/CodeArea/grafana-loki-dockerized/loki_2:/etc/loki
+      - ./loki_2:/etc/loki
     ports:
       - "3102:3102"
     restart: unless-stopped
@@ -61,7 +61,7 @@ services:
     image: grafana/promtail:2.4.0
     volumes:
       - /var/log:/var/log
-      - /Users/emagradze/CodeArea/grafana-loki-dockerized/promtail_2:/etc/promtail
+      - ./promtail_2:/etc/promtail
     # ports:
     #   - "1514:1514" # this is only needed if you are going to send syslogs
     restart: unless-stopped
@@ -72,7 +72,7 @@ services:
   loki3:
     image: grafana/loki:2.4.0
     volumes:
-      - /Users/emagradze/CodeArea/grafana-loki-dockerized/loki_3:/etc/loki
+      - ./loki_3:/etc/loki
     ports:
       - "3103:3103"
     restart: unless-stopped
@@ -83,7 +83,7 @@ services:
     image: grafana/promtail:2.4.0
     volumes:
       - /var/log:/var/log
-      - /Users/emagradze/CodeArea/grafana-loki-dockerized/promtail_3:/etc/promtail
+      - ./promtail_3:/etc/promtail
     # ports:
     #   - "1514:1514" # this is only needed if you are going to send syslogs
     restart: unless-stopped
@@ -94,7 +94,7 @@ services:
     image: grafana/grafana:latest
     user: "1000"
     volumes:
-    - /Users/emagradze/CodeArea/grafana-loki-dockerized/grafana:/var/lib/grafana
+    - ./grafana:/var/lib/grafana
     ports:
       - "3000:3000"
     restart: unless-stopped
