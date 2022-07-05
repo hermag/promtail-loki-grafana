@@ -1,0 +1,15 @@
+resources:
+  requests:
+    cpu: 250m
+    memory: 512Mi
+  limits:
+    cpu: 750m
+    memory: 750Mi
+persistence:
+  enabled: true
+  type: pvc
+  accessModes:
+    - ReadWriteOnce
+  existingClaim: loki-volume-claim-04
+config:
+  auth_enabled: false
