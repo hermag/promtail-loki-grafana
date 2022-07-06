@@ -1,0 +1,62 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: loki04
+  name: loki04
+  namespace: grafana
+spec:
+  selector:
+    matchLabels:
+      app: loki04
+  template:
+    metadata:
+      labels:
+        app: loki04
+    spec:
+      securityContext:
+        fsGroup: 472
+        supplementalGroups:
+          - 0
+      containers:
+        - name: loki04
+          image: grafana/loki:main
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 3100
+              name: http-loki
+              protocol: TCP
+          livenessProbe:
+            failureThreshold: 3
+            initialDelaySeconds: 30
+            periodSeconds: 10
+            successThreshold: 1
+            tcpSocket:
+              port: 3100
+            timeoutSeconds: 1
+          resources:
+            requests:
+              cpu: 250m
+              memory: 750Mi
+          volumeMounts:
+            - mountPath: /tmp/loki
+              name: loki04-deployment-pv
+      volumes:
+        - name: loki04-deployment-pv
+          persistentVolumeClaim:
+            claimName: loki-volume-claim-01
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: loki04
+  namespace: grafana
+spec:
+  ports:
+    - port: 3100
+      protocol: TCP
+      targetPort: http-loki
+  selector:
+    app: loki04
+  sessionAffinity: None
+  type: LoadBalancer
