@@ -8,7 +8,7 @@
 <a href="https://github.com/hermag/promtail-loki-grafana/pulls"><img src="https://img.shields.io/github/issues-pr/hermag/promtail-loki-grafana" alt="Pull Requests Badge"/></a>
 <a href="https://github.com/hermag/promtail-loki-grafana/issues"><img src="https://img.shields.io/github/issues/hermag/promtail-loki-grafana" alt="Issues Badge"/></a>
 <a href="https://github.com/hermag/promtail-loki-grafana/graphs/contributors"><img alt="GitHub contributors" src="https://img.shields.io/github/contributors/hermag/promtail-loki-grafana?color=2b9348"></a>
-<a href="https://github.com/hermag/promtail-loki-grafana/blob/master/LICENSE"><img src="https://img.shields.io/github/license/hermag/promtail-loki-grafana?color=2b9348" alt="License Badge"/></a>
+<a href="https://github.com/hermag/promtail-loki-grafana/blob/master/LICENSE.md"><img src="https://img.shields.io/github/license/hermag/promtail-loki-grafana?color=2b9348" alt="License Badge"/></a>
 
 ### Contents:
   - [Categories](#categories)
