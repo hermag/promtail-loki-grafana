@@ -13,7 +13,7 @@
 Goal of this project is to deploy several (4) Promtail log parsing services and equal number of Loki services to get these logs into one single instance of Grafana dashboard. 
 With multiple Loki services we will be able to separate logs as we like. In particular, we will add Grafana Organizations Plugin to our Grafana deployment and add single Loki instance to a single organization, in this way each organization will have it's own Loki instance as a data source. Thus, we will be able to isolate logs per organization, on other hand, Organizations plugin allows to add users in it, hence it will be possible to give access to the specific users only to the specific set of data.
 
-All these is deployed in two ways, using Docker and K8S, you can check details here:
+All these is deployed in two ways, using Docker and K8S, you can check details here (pre requisits you should be using Linux or Mac OS - for Windows you would need certain adaptations for the volume mounting paths in the docker-compose files, you can easily found out how to correctly specify the file system paths in docker-compose file which you will be running on Windows OS):
 
 * [Docker](https://github.com/hermag/promtail-loki-grafana/tree/main/docker)
 * [K8S (EKS)](https://github.com/hermag/promtail-loki-grafana/tree/main/eks)
