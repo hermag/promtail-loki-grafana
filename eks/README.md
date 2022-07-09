@@ -1,7 +1,7 @@
 ## Deployment of Promtail, Loki and Grafana
 For the deployment of the Promtail, Grafana and Loki, I am using the following approach (take into account that this is just PoC - Proof of Concept Approach and if you would like to use it in production, security hardning and identity management configuration will be required.)
 
-![](/screenshots/switchingorganizations.png).
+![](/screenshots/promtaillokigrafanaeks.png).
 
 
 ### K8S in particular EKS version
