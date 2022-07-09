@@ -60,6 +60,8 @@ In the ```docker-compose``` file the ```Promtail``` service is configured as fol
 ```
 The key part here is the following: ```command: -config.file=/etc/promtail/promtail-config.yml```, where the configuration file is pointing to the one, which is located in the ```promtail_0``` folder on the host OS. 
 
+**Important Note**: Make sure to have .log text files in ```/var/log/``` folder. You can use custom file types as well as custom locations.
+
 #### Grafana Loki
 
 In this setup, Loki is used to accept the log data sent by the different agents, including Promtail. In the docker-compose.yaml file, it's section looks like this:
@@ -121,3 +123,6 @@ The key line here is this ```http_listen_port: 3100```. Here we are specifying t
 - promtail_1 -> loki_1 (loki1:3101)
 - promtail_2 -> loki_2 (loki2:3102)
 - promtail_3 -> loki_3 (loki3:3103)
+
+
+#### Grafana Loki
