@@ -1,0 +1,44 @@
+version: "3"
+networks:
+  loki:
+services:
+  #################
+  promtail0:
+    image: grafana/promtail:2.4.0
+    volumes:
+      - /opt/Tenant_0:/opt/Tenant_0
+      - /home/ubuntu/dockerized-promtail/promtail_0:/etc/promtail
+    restart: unless-stopped
+    command: -config.file=/etc/promtail/promtail-config.yml
+    networks:
+      - loki
+  #################
+  promtail1:
+    image: grafana/promtail:2.4.0
+    volumes:
+      - /opt/Tenant_1:/opt/Tenant_1
+      - /home/ubuntu/dockerized-promtail/promtail_1:/etc/promtail
+    restart: unless-stopped
+    command: -config.file=/etc/promtail/promtail-config.yml
+    networks:
+      - loki
+  #################
+  promtail2:
+    image: grafana/promtail:2.4.0
+    volumes:
+      - /opt/Tenant_2:/opt/Tenant_2
+      - /home/ubuntu/dockerized-promtail/promtail_2:/etc/promtail
+    restart: unless-stopped
+    command: -config.file=/etc/promtail/promtail-config.yml
+    networks:
+      - loki
+  #################
+  promtail3:
+    image: grafana/promtail:2.4.0
+    volumes:
+      - /opt/Tenant_3:/opt/Tenant_3
+      - /home/ubuntu/dockerized-promtail/promtail_3:/etc/promtail
+    restart: unless-stopped
+    command: -config.file=/etc/promtail/promtail-config.yml
+    networks:
+      - loki
