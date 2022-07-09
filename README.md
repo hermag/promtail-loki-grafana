@@ -9,7 +9,6 @@
 <a href="https://github.com/hermag/promtail-loki-grafana/blob/master/LICENSE.md"><img src="https://img.shields.io/github/license/hermag/promtail-loki-grafana?color=2b9348" alt="License Badge"/></a>
 </div>
 
-# Deployment of Promtail, Loki and Grafana
-[Promtail](https://grafana.com/docs/loki/latest/clients/promtail/), [Loki](https://grafana.com/oss/loki/) and [Grafana](https://grafana.com/) using
+# Deployment of [Promtail](https://grafana.com/docs/loki/latest/clients/promtail/), [Loki](https://grafana.com/oss/loki/) and [Grafana](https://grafana.com/) using
 * Docker
 * K8S (EKS)
