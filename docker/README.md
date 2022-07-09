@@ -125,4 +125,21 @@ The key line here is this ```http_listen_port: 3100```. Here we are specifying t
 - promtail_3 -> loki_3 (loki3:3103)
 
 
-#### Grafana Loki
+#### Grafana
+Running grafana dashboard is trivial, for that we have the following section in the ```docker-compose.yml``` file.
+```
+  grafana:
+    image: grafana/grafana:latest
+    user: "1000"
+    volumes:
+    - ./grafana:/var/lib/grafana
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
+    networks:
+      - loki
+```
+The most important line here is ```./grafana:/var/lib/grafana``` this we need to keep the grafana changes persistant. The ports section is trivial, since Grafana is running on port 3000 and we would like to keep the same port in use (after launching the grafana service, we can access it on http://localhost:3000 , the default username is ```admin``` and password ```admin```, once the password changed it will stay changed since we keep the grafana configuration persistantly in ```./grafana``` folder.)
+
+After deployment and logging in to Grafana we need to add the Organisations plugin, for that we need to go to the following settings:
+```Configuration --> Plugins``` search for Organisations 
