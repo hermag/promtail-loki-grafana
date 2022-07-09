@@ -61,8 +61,8 @@ In the ```docker-compose``` file the ```Promtail``` service is configured as fol
 The key part here is the following: ```command: -config.file=/etc/promtail/promtail-config.yml```, where the configuration file is pointing to the one, which is located in the ```promtail_0``` folder on the host OS. 
 
 #### Grafana Loki
-Since we 
 
+In this setup, Loki is used to accept the log data sent by the different agents, including Promtail. In the docker-compose.yaml file, it's section looks like this:
 
 ```docker
 version: "3"
@@ -81,3 +81,43 @@ services:
     networks:
       - loki
 ```
+In this configuration, the most important line is this one ```- ./loki_0:/etc/loki``` and this ```command: -config.file=/etc/loki/loki-config.yml```. The first points to the folder, where the Loki configuration file is located, while the second one specifies the argument to use the provided configuration file.
+Configuration file looks as follows:
+```
+auth_enabled: false
+
+server:
+  http_listen_port: 3100
+  grpc_listen_port: 9096
+
+common:
+  path_prefix: /tmp/loki
+  storage:
+    filesystem:
+      chunks_directory: /tmp/loki/chunks
+      rules_directory: /tmp/loki/rules
+  replication_factor: 1
+  ring:
+    instance_addr: 127.0.0.1
+    kvstore:
+      store: inmemory
+
+schema_config:
+  configs:
+    - from: 2020-10-24
+      store: boltdb-shipper
+      object_store: filesystem
+      schema: v11
+      index:
+        prefix: index_
+        period: 24h
+
+ruler:
+  alertmanager_url: http://localhost:9093
+
+```
+The key line here is this ```http_listen_port: 3100```. Here we are specifying the Loki service port, which will be listened. Since we are running multiple Loki services, the ports will be different, hence in promtail configuration, we should not forget to specify the correct port and the corresponding service name.
+- promtail_0 -> loki_0 (loki0:3100)
+- promtail_1 -> loki_1 (loki1:3101)
+- promtail_2 -> loki_2 (loki2:3102)
+- promtail_3 -> loki_3 (loki3:3103)
