@@ -8,6 +8,7 @@
 <a href="https://github.com/hermag/promtail-loki-grafana/graphs/contributors"><img alt="GitHub contributors" src="https://img.shields.io/github/contributors/hermag/promtail-loki-grafana?color=2b9348"></a>
 <a href="https://github.com/hermag/promtail-loki-grafana/blob/master/LICENSE.md"><img src="https://img.shields.io/github/license/hermag/promtail-loki-grafana?color=2b9348" alt="License Badge"/></a>
 </div>
-# Deployment of [Promtail](https://grafana.com/docs/loki/latest/clients/promtail/#:~:text=Promtail%20is%20an%20agent%20which,Attaches%20labels%20to%20log%20streams), [Loki](https://grafana.com/oss/loki/) and [Grafana](https://grafana.com/) using
+# Deployment of Promtail, Loki and Grafana
+[Promtail](https://grafana.com/docs/loki/latest/clients/promtail/), [Loki](https://grafana.com/oss/loki/) and [Grafana](https://grafana.com/) using
 * Docker
 * K8S (EKS)
