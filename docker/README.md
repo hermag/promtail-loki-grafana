@@ -142,4 +142,9 @@ Running grafana dashboard is trivial, for that we have the following section in 
 The most important line here is ```./grafana:/var/lib/grafana``` this we need to keep the grafana changes persistant. The ports section is trivial, since Grafana is running on port 3000 and we would like to keep the same port in use (after launching the grafana service, we can access it on http://localhost:3000 , the default username is ```admin``` and password ```admin```, once the password changed it will stay changed since we keep the grafana configuration persistantly in ```./grafana``` folder.)
 
 After deployment and logging in to Grafana we need to add the Organisations plugin, for that we need to go to the following settings:
-```Configuration --> Plugins``` search for Organisations 
+```Configuration --> Plugins``` search for the plugin **Organisations** and install it.
+After installation, log out and log in to grafana to be able to see the plugin. After that, we need to go to ```Server Admin``` section, select **Orgs** by clicking the button with label **+New org** create new organisations. On the same panel, in the Users tab, one can add users and add the user to the previously created Organisation. One can add user to the organisation with the role of Viewer, Editor or Admin.
+
+The final step is to add the source of data, for that we need to go to ```Configuration --> Data Sources ``` and select Loki. After adding the Loki as a data source, we need to specify the URL http://loki0:3100, which corresponds to the service ```loki0```, which is running on port 3100. Since all the containers are in the same network loki, all these services will be visible just by the name. After writing the URL, one need to click **Save & test** button to make sure that source is appended. 
+
+To visualize the data all the services (promtail, loki and of course Grafana) should be running. One need to switch to the organisation (see ![picture](screenshots/switchingorganizations.png) below) 
