@@ -147,4 +147,4 @@ After installation, log out and log in to grafana to be able to see the plugin. 
 
 The final step is to add the source of data, for that we need to go to ```Configuration --> Data Sources ``` and select Loki. After adding the Loki as a data source, we need to specify the URL http://loki0:3100, which corresponds to the service ```loki0```, which is running on port 3100. Since all the containers are in the same network loki, all these services will be visible just by the name. After writing the URL, one need to click **Save & test** button to make sure that source is appended. 
 
-To visualize the data all the services (promtail, loki and of course Grafana) should be running. One need to switch to the organisation (see ![picture](./screenshots/switchingorganizations.png) below) 
+To visualize the data all the services (promtail, loki and of course Grafana) should be running. One need to switch to the organisation (see ![picture](/screenshots/switchingorganizations.png) below) 
